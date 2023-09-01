@@ -1075,6 +1075,9 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		
 		cell.optionLabel.textColor = textColor
 		cell.optionLabel.font = textFont
+        cell.subOptionLabel.textColor = textColor
+        cell.subOptionLabel.font = textFont
+        
 		cell.selectedBackgroundColor = selectionBackgroundColor
         cell.highlightTextColor = selectedTextColor
         cell.normalTextColor = textColor
@@ -1082,7 +1085,12 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		if let cellConfiguration = cellConfiguration {
 			cell.optionLabel.text = cellConfiguration(index, dataSource[index])
 		} else {
-			cell.optionLabel.text = dataSource[index]
+            let options = dataSource[index].components(separatedBy: "/")
+            let option = options[0]
+            let subOption = options[1]
+            
+			cell.optionLabel.text = option
+            cell.subOptionLabel.text = subOption
 		}
 		
 		customCellConfiguration?(index, dataSource[index], cell)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhL-pA-i6q">
-                    <rect key="frame" x="8" y="8" width="304" height="28"/>
+                    <rect key="frame" x="8" y="8" width="144" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-fM-x2l">
+                    <rect key="frame" x="162" y="8" width="150" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="iyN-Qx-0LD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -22,8 +31,11 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="dhL-pA-i6q" secondAttribute="trailing" constant="8" id="Phk-No-PFh"/>
+                <constraint firstItem="BqX-fM-x2l" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="0Fm-Y1-WFq"/>
+                <constraint firstItem="BqX-fM-x2l" firstAttribute="leading" secondItem="dhL-pA-i6q" secondAttribute="trailing" constant="10" id="Cj6-XD-qNM"/>
                 <constraint firstItem="dhL-pA-i6q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="QIg-6Z-lbJ"/>
+                <constraint firstAttribute="bottom" secondItem="BqX-fM-x2l" secondAttribute="bottom" constant="8" id="cE1-gC-hU9"/>
+                <constraint firstAttribute="trailing" secondItem="BqX-fM-x2l" secondAttribute="trailing" constant="8" id="j7I-tF-cC7"/>
                 <constraint firstItem="dhL-pA-i6q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="qo1-5r-HsS"/>
                 <constraint firstAttribute="bottom" secondItem="dhL-pA-i6q" secondAttribute="bottom" constant="8" id="wRT-h8-gtn"/>
             </constraints>
@@ -31,8 +43,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="optionLabel" destination="dhL-pA-i6q" id="1GT-db-EaA"/>
+                <outlet property="subOptionLabel" destination="BqX-fM-x2l" id="YVa-Nh-37J"/>
             </connections>
-            <point key="canvasLocation" x="-16" y="2"/>
+            <point key="canvasLocation" x="-17.39130434782609" y="1.3392857142857142"/>
         </view>
     </objects>
 </document>
