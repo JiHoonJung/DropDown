@@ -1096,6 +1096,7 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
                 cell.subOptionLabel.text = subOption
             } else {
                 cell.optionLabel.text = dataSource[index]
+                cell.subOptionLabel.text = ""
             }
 		}
 		
