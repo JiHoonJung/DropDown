@@ -153,6 +153,8 @@ public final class DropDown: UIView {
 	public var width: CGFloat? {
 		didSet { setNeedsUpdateConstraints() }
 	}
+    
+    public var isSplit: Bool = false
 
 	/**
 	arrowIndication.x
@@ -1085,12 +1087,16 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		if let cellConfiguration = cellConfiguration {
 			cell.optionLabel.text = cellConfiguration(index, dataSource[index])
 		} else {
-            let options = dataSource[index].components(separatedBy: "/")
-            let option = options[0]
-            let subOption = options[1]
-            
-			cell.optionLabel.text = option
-            cell.subOptionLabel.text = subOption
+            if isSplit {
+                let options = dataSource[index].components(separatedBy: "/")
+                let option = options[0]
+                let subOption = options[1]
+                
+                cell.optionLabel.text = option
+                cell.subOptionLabel.text = subOption
+            } else {
+                cell.optionLabel.text = dataSource[index]
+            }
 		}
 		
 		customCellConfiguration?(index, dataSource[index], cell)
